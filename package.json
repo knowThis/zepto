@@ -4,16 +4,19 @@
     "main": "dist/zepto.js",
     "homepage": "http://zeptojs.com",
     "scripts": {
-        "test": "coffee make test",
-        "dist": "coffee make dist",
-        "start": "coffee test/server.coffee"
+        "build": "webpack --config webpack/webpack.prod.conf.js",
+        "dev": "webpack --config webpack/webpack.dev.conf.js",
+        "start": "webpack-dev-server --config=webpack/webpack.dev.conf.js --mode=development"
     },
     "repository": "madrobby/zepto",
     "license": "MIT",
     "devDependencies": {
-        "uglify-js": "2.4.x",
-        "express": "3.1.x",
-        "coffee-script": "1.5.x",
-        "shelljs": "0.1.x"
+        "@babel/core": "^7.7.5",
+        "babel-loader": "^8.0.6",
+        "html-webpack-plugin": "^4.0.0-beta.9",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0",
+        "webpack-merge": "^4.2.2"
     }
 }
